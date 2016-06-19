@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% if page.title %}{{ page.title }} | {{ site.name }}{% else %}{{ site.name }} – {{ site.description }}{% endif %}</title>
+
+    {% include meta.html %}
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+  </head>
+
+  <body>
+    {{ content }}
+
+    {% include analytics.html %}
+    {% include metrika.html %}
+  </body>
+</html>
