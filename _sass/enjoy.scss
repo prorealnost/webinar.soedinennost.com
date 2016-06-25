@@ -1,0 +1,103 @@
+@import "base";
+
+
+/*
+body {
+  background-image: url(/images/design-enjoy.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 1280px auto;
+}
+*/
+
+.enjoy {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  .enjoy__title {
+    font-family: MullerBold;
+    font-size: 42px;
+    color: #2E2E2C;
+    line-height: 50px;
+
+    &::after {
+      content:"";
+      display: block;
+      margin: 18px 0;
+      background: #ECD434;
+      width: 163px;
+      height: 2px;
+    }
+  }
+
+  .enjoy__row {
+    margin-top: 51px;
+    margin-bottom: 38px;
+
+    .enjoy__right {
+      /* Достиг приличного до: */
+      .enjoy__lead {
+        font-family: MullerRegular;
+        font-size: 24px;
+        color: #000000;
+        line-height: 30px;
+      }
+
+      @mixin enjoy__text {
+        font-family: MullerRegular;
+        font-size: 16px;
+        color: #2E2E2C;
+        line-height: 20px;
+      }
+
+      .enjoy__offer {
+        /* Есть система, котора: */
+        @include enjoy__text;
+
+        margin-top: 25px;
+      }
+
+      ol {
+        padding-left: 18px;
+
+        li {
+          margin-bottom: 8px;
+        }
+
+        margin-bottom: 25px;
+      }
+
+      .enjoy__button {
+        /* action-button: */
+        background: #F1D725;
+        border: 1px solid #F1D725;
+        border-radius: 5px;
+        /* ПОЛУЧИТЬ ЗАПИСЬ ВЕБИ: */
+        font-family: MullerBold;
+        font-size: 12px;
+        color: #262626;
+        letter-spacing: 0.59px;
+        line-height: 16px;
+        padding: 17px 39px;
+        white-space: normal;
+
+        &:hover {
+          background: #EDC00B;
+
+          transition: all 0.4s;
+          -webkit-transition: all 0.4s;
+          -moz-transition: all 0.4s;  
+          -ms-transition: all 0.4s;
+          -o-transition: all 0.4s;
+        }
+      }
+
+      .enjoy__note {
+        /* Подходит, если ты за: */
+        @include enjoy__text;
+
+        margin-top: 25px;
+      }
+    }
+  }
+}

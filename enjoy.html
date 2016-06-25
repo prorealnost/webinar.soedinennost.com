@@ -1,16 +1,38 @@
 ---
 layout: base
 permalink: /enjoy/
+style: enjoy
 ---
 
-<section>
+<section class="enjoy">
   <div class="container">
-    <p class="text-center">
-      <a class="btn btn-info" href="https://vk.com/podarki_webinar" target="_blank" onclick="yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-gift-click'); return true;">Получить подарок</a>
-      <a class="btn btn-danger" href="http://soedinennost.com/pobeditel-2/" target="_blank" onclick="yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-training-click'); return true;">Записаться на тренинг</a>
-    </p>
-    <div class="flex-video widescreen">
-      <iframe width="853" height="480" src="https://www.youtube.com/embed/swHo_lAL86c?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+    <h1 class="enjoy__title">
+      Вебинар, который поможет тебе
+      <div class="hidden-xs hidden-sm"></div>
+      совершить прорыв в&nbsp;жизни
+    </h1>
+    <div class="enjoy__row row">
+      <div class="enjoy__left col-md-8">
+        <div class="flex-video widescreen">
+          <iframe width="853" height="480" src="https://www.youtube.com/embed/swHo_lAL86c?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="enjoy__right col-md-4">
+        <p class="enjoy__lead">Хочешь развиваться дальше?</p>
+        <div class="enjoy__offer">
+          <p>Добавляйся в группу, чтобы получить подарки:</p>
+          <ol>
+            <li>Книгу «17 шагов, чтобы привести жизнь в порядок»</li>
+            <li>Книгу «Технология лёгкого достижения целей»</li>
+            <li>Один из трёх обучающих комплектов на выбор</li>
+          </ol>
+        </div>
+        <a class="btn btn-warning btn-block enjoy__button" href="https://vk.com/podarki_webinar" target="_blank" onclick="yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-gift-click'); return true;">ВСТУПИТЬ В&nbsp;ГРУППУ И&nbsp;ПОЛУЧИТЬ ПОДАРКИ</a>
+        <div class="enjoy__note">
+          <p>Кстати, у меня есть тренинг «Победитель», на котором я возьму тебя за руку и доведу до прорывных результатов.</p>
+          <p><a href="http://pobeditel.soedinennost.com/" target="_blank" onclick="yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-training-click'); return true;">Узнать про тренинг подробнее</a></p>
+        </div>
+      </div>
     </div>
   </div>
 </section>

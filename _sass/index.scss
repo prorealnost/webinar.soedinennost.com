@@ -1,17 +1,4 @@
-@import "bootstrap";
-@import "flex-video";
-
-body {
-/*
-  background-image: url(/images/design.jpg);
-  background-position: top center;
-  background-repeat: no-repeat;
-*/
-  font-family: MullerRegular;
-  font-size: 16px;
-  color: #2E2E2C;
-  line-height: 17px;
-}
+@import "base";
 
 .jumbo {
   padding-top: 68px;
@@ -243,4 +230,3 @@ body {
     top: 780px;
   }
 }
-
