@@ -51,6 +51,7 @@ style: enjoy
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
   var player;
+  var halfPlayedEventSent = false;
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('webinar-iframe', {
       events: {
@@ -61,10 +62,11 @@ style: enjoy
     setInterval(function(){
       var time = player.getCurrentTime();
       console.log(time);
-      ga('send', 'event', 'video', 'playtime', 'webinar', time);
-      if (time >= 18000) {
+      //ga('send', 'event', 'video', 'playtime', 'webinar', time);
+      if (time >= 18000 && !halfPlayedEventSent) {
         yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-half-played');
         ga('send', 'event', 'video', 'half-played', 'webinar', player.getCurrentTime());
+        halfPlayedEventSent = true;
       }
     }, 60000);
   }
@@ -87,7 +89,7 @@ style: enjoy
     }
     if (status) {
       console.log(status);
-      ga('send', 'event', 'video', status, 'webinar', player.getCurrentTime());
+      //ga('send', 'event', 'video', status, 'webinar', player.getCurrentTime());
     }
   }
   function onPlayerStateChange(event) {
