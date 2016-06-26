@@ -52,7 +52,31 @@ style: enjoy
 
   var player;
   var halfPlayedEventSent = false;
+  var playingEventSent = false;
+  var endedEventSent = false;
+  var halfVideoLength = 1800;
+
+  function statusFromState(playerStatus) {
+    var status;
+    if (playerStatus == -1) {
+      status = 'unstarted';
+    } else if (playerStatus == 0) {
+      status = 'ended';
+    } else if (playerStatus == 1) {
+      status = 'playing';
+    } else if (playerStatus == 2) {
+      status = 'paused';
+    } else if (playerStatus == 3) {
+      status = 'buffering';
+    } else if (playerStatus == 5) {
+      status = 'cued';
+    }
+    return status;
+  }
+
   function onYouTubeIframeAPIReady() {
+    console.log('API ready');
+
     player = new YT.Player('webinar-iframe', {
       events: {
         'onStateChange': onPlayerStateChange
@@ -61,38 +85,36 @@ style: enjoy
 
     setInterval(function(){
       var time = player.getCurrentTime();
+      var state = player.getPlayerState();
+      var status = statusFromState(state);
       console.log(time);
-      //ga('send', 'event', 'video', 'playtime', 'webinar', time);
-      if (time >= 18000 && !halfPlayedEventSent) {
+      console.log(status);
+      if (!halfPlayedEventSent && time >= halfVideoLength && status == 'playing') {
         yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-half-played');
         ga('send', 'event', 'video', 'half-played', 'webinar', player.getCurrentTime());
+        console.log('half-played');
         halfPlayedEventSent = true;
       }
     }, 60000);
   }
-  function sendPlayerStatusToAnalytics(playerStatus) {
-    var status;
-    if (playerStatus == -1) {
-      status = 'unstarted';
-    } else if (playerStatus == 0) {
-      status = 'ended';
-      yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-ended');
-    } else if (playerStatus == 1) {
-      status = 'playing';
-      yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-playing');
-    } else if (playerStatus == 2) {
-      status = 'paused';
-    } else if (playerStatus == 3) {
-      status = 'buffering';
-    } else if (playerStatus == 5) {
-      status = 'cued';
-    }
-    if (status) {
-      console.log(status);
-      //ga('send', 'event', 'video', status, 'webinar', player.getCurrentTime());
-    }
-  }
+
   function onPlayerStateChange(event) {
-    sendPlayerStatusToAnalytics(event.data);
+    var status = statusFromState(event.data);
+
+    if (status == 'ended') {
+      if (!endedEventSent) {
+        yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-ended');
+        ga('send', 'event', 'video', status, 'webinar', player.getCurrentTime());
+        console.log(status);
+        endedEventSent = true;
+      }
+    } else if (status == 'playing') {
+      if (!playingEventSent) {
+        yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-playing');
+        ga('send', 'event', 'video', status, 'webinar', player.getCurrentTime());
+        console.log(status);
+        playingEventSent = true;
+      }
+    }
   }
 </script>
