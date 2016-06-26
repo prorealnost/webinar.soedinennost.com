@@ -14,7 +14,13 @@ style: enjoy
     <div class="enjoy__row row">
       <div class="enjoy__left col-md-8">
         <div class="flex-video widescreen">
-          <iframe width="853" height="480" src="https://www.youtube.com/embed/swHo_lAL86c?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+          <iframe id="webinar-iframe"
+            width="853" height="480"
+            src="https://www.youtube.com/embed/swHo_lAL86c?rel=0&showinfo=0&enablejsapi=1"
+            frameborder="0"
+            style="border: solid 4px #37474F"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
       <div class="enjoy__right col-md-4">
@@ -27,12 +33,64 @@ style: enjoy
             <li>Один из трёх обучающих комплектов на выбор</li>
           </ol>
         </div>
-        <a class="btn btn-warning btn-block enjoy__button" href="https://vk.com/podarki_webinar" target="_blank" onclick="yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-gift-click'); return true;">ВСТУПИТЬ В&nbsp;ГРУППУ И&nbsp;ПОЛУЧИТЬ ПОДАРКИ</a>
+        <a class="btn btn-warning btn-block enjoy__button" href="https://vk.com/podarki_webinar" target="_blank" onclick="yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-gift-click'); ga('send', 'event', 'button', 'click', 'gift'); return true;">ВСТУПИТЬ В&nbsp;ГРУППУ И&nbsp;ПОЛУЧИТЬ ПОДАРКИ</a>
         <div class="enjoy__note">
           <p>Кстати, у меня есть тренинг «Победитель», на котором я возьму тебя за руку и доведу до прорывных результатов.</p>
-          <p><a href="http://pobeditel.soedinennost.com/" target="_blank" onclick="yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-training-click'); return true;">Узнать про тренинг подробнее</a></p>
+          <p><a href="http://pobeditel.soedinennost.com/" target="_blank" onclick="yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-training-click'); ga('send', 'event', 'button', 'click', 'training'); return true;">Узнать про тренинг подробнее</a></p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script type="text/javascript">
+  var tag = document.createElement('script');
+  tag.id = 'iframe-demo';
+  tag.src = 'https://www.youtube.com/iframe_api';
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('webinar-iframe', {
+      events: {
+        'onStateChange': onPlayerStateChange
+      }
+    });
+
+    setInterval(function(){
+      var time = player.getCurrentTime();
+      console.log(time);
+      ga('send', 'event', 'video', 'playtime', 'webinar', time);
+      if (time >= 18000) {
+        yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-half-played');
+        ga('send', 'event', 'video', 'half-played', 'webinar', player.getCurrentTime());
+      }
+    }, 60000);
+  }
+  function sendPlayerStatusToAnalytics(playerStatus) {
+    var status;
+    if (playerStatus == -1) {
+      status = 'unstarted';
+    } else if (playerStatus == 0) {
+      status = 'ended';
+      yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-ended');
+    } else if (playerStatus == 1) {
+      status = 'playing';
+      yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-playing');
+    } else if (playerStatus == 2) {
+      status = 'paused';
+    } else if (playerStatus == 3) {
+      status = 'buffering';
+    } else if (playerStatus == 5) {
+      status = 'cued';
+    }
+    if (status) {
+      console.log(status);
+      ga('send', 'event', 'video', status, 'webinar', player.getCurrentTime());
+    }
+  }
+  function onPlayerStateChange(event) {
+    sendPlayerStatusToAnalytics(event.data);
+  }
+</script>
