@@ -35,10 +35,10 @@ style: enjoy
                 <li>3. Один из трёх обучающих комплектов на выбор</li>
               </ol>
             </div>
-            <a class="btn btn-warning btn-block enjoy__button" href="https://vk.com/podarki_webinar" target="_blank" onclick="yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-gift-click'); ga('send', 'event', 'button', 'click', 'gift'); return true;">ВСТУПИТЬ В&nbsp;ГРУППУ<br/>И&nbsp;ПОЛУЧИТЬ ПОДАРКИ</a>
+            <a class="btn btn-warning btn-block enjoy__button" href="https://vk.com/podarki_webinar" target="_blank" onclick="yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-gift-click'); ga('send', 'pageview', '/funnel/gift/'); return true;">ВСТУПИТЬ В&nbsp;ГРУППУ<br/>И&nbsp;ПОЛУЧИТЬ ПОДАРКИ</a>
             <div class="enjoy__note">
               <p>Кстати, у меня есть тренинг «Победитель», на котором я возьму тебя за руку и доведу до прорывных результатов.</p>
-              <p><a href="http://pobeditel.soedinennost.com/" target="_blank" onclick="yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-training-click'); ga('send', 'event', 'button', 'click', 'training'); return true;">Узнать про тренинг подробнее</a></p>
+              <p><a href="http://pobeditel.soedinennost.com/" target="_blank" onclick="yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-training-click'); ga('send', 'pageview', '/funnel/training/'); return true;">Узнать про тренинг подробнее</a></p>
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@ style: enjoy
       console.log(status);
       if (!halfPlayedEventSent && time >= halfVideoLength && status == 'playing') {
         yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-half-played');
-        ga('send', 'event', 'video', 'half-played', 'webinar', player.getCurrentTime());
+        ga('send', 'pageview', '/funnel/webinar-half-played/');
         console.log('half-played');
         halfPlayedEventSent = true;
       }
@@ -108,14 +108,14 @@ style: enjoy
     if (status == 'ended') {
       if (!endedEventSent) {
         yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-ended');
-        ga('send', 'event', 'video', status, 'webinar', player.getCurrentTime());
+        ga('send', 'pageview', '/funnel/webinar-ended/');
         console.log(status);
         endedEventSent = true;
       }
     } else if (status == 'playing') {
       if (!playingEventSent) {
         yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-playing');
-        ga('send', 'event', 'video', status, 'webinar', player.getCurrentTime());
+        ga('send', 'pageview', '/funnel/webinar-playing/');
         console.log(status);
         playingEventSent = true;
       }
