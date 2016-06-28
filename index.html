@@ -3,210 +3,239 @@ layout: base
 style: index
 ---
 
-<script type="text/javascript" src="/vendor/scrollmagic/minified/ScrollMagic.min.js"></script>
-<script type="text/javascript" src="/vendor/scrollmagic/TweenMax.min.js"></script>
-<script type="text/javascript" src="/vendor/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
-<!-- script type="text/javascript" src="/vendor/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script -->
+<div class="root-layout">
+	<main class="main" role="main">
+		<section class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-4">
+						<h1 class="s-main__title">
+							Упёрся в&nbsp;потолок?
+						</h1>
+						<p class="s-main__introtext">
+							этот вебинар поможет тебе<br/>совершить прорыв в&nbsp;жизни
+						</p>
+		        <form class="form" action="http://love.prorealnost.com/order.php" method="POST" onsubmit="yaCounter{{ site.yandex_metrika }}.reachGoal('landing-form-submit'); return true;">
+							<ul class="form__wrap row">
+					    	<li class="form__item">
+					    		<input id="input-email" type="email" class="input" name="email" placeholder="Емейл">
+					    	</li>
+						    <li class="form__item">
+						    	<button class="btn btn-primary" onclick="if ($('#input-email').val().length == 0) { $('#input-email').focus(); return false; }">
+							    	Получить запись вебинара
+							    </button>
+						    </li>
+							</ul>
+		          <input type="hidden" name="mailchimp-product-interest-id" value="5f768e5158" />
+		          <input type="hidden" name="trello-list-id" value="575c2b0c97128eedf5326e75" />
+		          <input type="hidden" name="redirect" value="http://webinar.soedinennost.com/enjoy/" />
+		        </form>
+		      </div>
+		      <div class="col-xs-8">
+		        <iframe src="https://player.vimeo.com/video/171379454" width="710" height="399" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		      </div>
+				</div>
+			</div>
+		</section>
+		<section class="section s-results">
+			<div class="container">
+				<h2 class="title title--center">
+					<em>100%</em>учеников, которые работали<br>
+					добиваются результатов
+				</h2>
+		    <table class="results__table">
+		      <tr class="results__table-row">
+		        <td class="results__name">Саша Кайсин</td>
+		        <td class="results__result">
+		          <span>организует парусные регаты, cреди клиентов Альфа-Банк и&nbsp;Порш</span>
+		        </td>
+		      </tr>
+		      <tr class="results__table-row">
+		        <td class="results__name">Надя Хохлова</td>
+		        <td class="results__result">
+		          <span>запустила собственный бренд модной одежды</span>
+		        </td>
+		      </tr>
+		      <tr class="results__table-row">
+		        <td class="results__name">Максим Мартьянов</td>
+		        <td class="results__result">
+		          <span>стал эксклюзивным представителем компании EBC Brakes в России</span>
+		        </td>
+		      </tr>
+		      <tr class="results__table-row">
+		        <td class="results__name">Константин Базоров</td>
+		        <td class="results__result">
+		          <span>открыл сеть магазинов спортивного оборудования в 4 городах</span>
+		        </td>
+		      </tr>
+		      <tr class="results__table-row">
+		        <td class="results__name">Дмитрий Гейман</td>
+		        <td class="results__result">
+		          <span>открыл сеть химчисток</span>
+		        </td>
+		      </tr>
+		      <tr class="results__table-row">
+		        <td class="results__name">Алексей Иванов</td>
+		        <td class="results__result">
+		          <span>открыл мастерскую дизайна интерьеров Geometrium</span>
+		        </td>
+		      </tr>
+		      <tr class="results__table-row">
+		        <td class="results__name">Алексей Черновой</td>
+		        <td class="results__result">
+		          <span>стал крутым фотографом, организует фестиваль SunArt</span>
+		        </td>
+		      </tr>
+		      <tr class="results__table-row">
+		        <td class="results__name">Александр Покровский</td>
+		        <td class="results__result">
+		          <span>открыл службу такси «Открытый город»</span>
+		        </td>
+		      </tr>
+		      <tr class="results__table-row">
+		        <td class="results__name">Алексей Девятериков</td>
+		        <td class="results__result">
+		          <span>открыл школу виндсёрфинга на Канарах</span>
+		        </td>
+		      </tr>
+		      <tr class="results__table-row">
+		        <td class="results__name">Максим Погребинский</td>
+		        <td class="results__result">
+		          <span>скинул 20 кг</span>
+		        </td>
+		      </tr>
+		      <tr class="results__table-row">
+		        <td class="results__name">Ирина Устьянцева</td>
+		        <td class="results__result">
+		          <span>дизайнер интерьеров, обучает людей в передаче «Квартирный вопрос» на НТВ</span>
+		        </td>
+		      </tr>
+		    </table>
+			</div>
+		</section>
+		<section id="about" class="section s-about">
+			<div class="s-about__sticker js-sticker-about"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-6">
+						<h2>Николай Воробьев</h2>
+						<p class="introtext"><b>тренирует 13 лет, ведет программы на радио<br> и телевидении, пишет книги</b></p>
 
-<script type="text/javascript" src="/vendor/jquery-1.12.2.min.js"></script>
+						<h4 class="title">Тренерский опыт</h4>
+						<p>Начал тренировать в 2003 году. Провёл тренинги в 24 городах России, Европы и Азии. Обучал сотрудников «Сбербанка», «Яндекса», «Альфа-Банка».</p>
+						<p>С 2006 по 2010 ведущий тренер крупнейшей в мире компании, которая специализируется на знакомствах. С 2010 тренер по достижению прорывных результатов, развитию личных качеств и созданию отношений. Автор 5 книг, 15 тренингов, обучил 15 000 человек.</p>
 
-<section class="jumbo">
-  <div class="container">
-    <h1 class="jumbo__header">Упёрся в&nbsp;потолок?</h1>
-    <div class="jumbo__row row">
-      <div class="jumbo__left col-xs-4">
-        <p class="jumbo__lead">Достиг приличного дохода?</p>
-        <p class="jumbo__lead">Уже давно на&nbsp;этом уровне?</p>
-        <p class="jumbo__lead">А&nbsp;что дальше?</p>
-        <p class="jumbo__offer">Есть система, которая позволяет
-          <br/>пробить &laquo;стеклянный потолок&raquo;</p>
+						<h4 class="title">Книги</h4>
+						<ul>
+							<li>«Как стать богатым и успешным, оставаясь тупым и ленивым»</li>
+							<li>«Быстрое поднятие самооценки»</li>
+							<li>«Как встать с дивана и начать добиваться желаемого»</li>
+						</ul>
 
-        <form class="jumbo__form" action="http://love.prorealnost.com/order.php" method="POST" onsubmit="yaCounter{{ site.yandex_metrika }}.reachGoal('landing-form-submit'); return true;">
-          <div class="form-group">
-            <input type="email" name="email" class="form-control" placeholder="Введи сюда свой email" required="required"/>
-          </div>
-          <button type="submit" class="btn btn-warning btn-block jumbo__button"><span>ПОЛУЧИТЬ ЗАПИСЬ ВЕБИНАРА</span></button>
-          <input type="hidden" name="mailchimp-product-interest-id" value="5f768e5158" />
-          <input type="hidden" name="trello-list-id" value="575c2b0c97128eedf5326e75" />
-          <input type="hidden" name="redirect" value="http://webinar.soedinennost.com/enjoy/" />
-        </form>
-      </div>
-      <div class="jumbo__right col-xs-8">
-        <iframe src="https://player.vimeo.com/video/171379454" width="710" height="399" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      </div>
-    </div>
-    <p class="jumbo__note">Подходит если зарабатываешь 50-250, но&nbsp;залип на&nbsp;этом уровне уже давно</p>
-  </div>
-</section>
+						<h4 class="title">30 личных достижений</h4>
+						<ul>
+							<li>Поехать учиться в Германию — учился год</li>
+							<li>Получить сертификат MCSE — получил, и ещё 15 разных сертификатов по IT</li>
+							<li>Пройти курс обучения парашютному спорту AFF — прошёл половину</li>
+							<li>Выучить английский, немецкий и испанский — английский на отлично, немецкий и испанский — могу лучше</li>
+							<li>Научиться продавать — создал отдел продаж из 6 человек и их научил</li>
+							<li>Построить собственный бизнес в сфере IT — занял 25% своего рынка — 300 корпоративных клиентов</li>
+							<li>Открыть филиал в Москве — есть</li>
+							<li>Переехать жить в Москву — есть</li>
+							<li>Купить квартиру в центре — есть</li>
+							<li>Купить спортивную машину — есть</li>
+							<li>Построить отношения с чудесной девушкой — есть</li>
+							<li>Похудеть на 20 килограмм — есть на 21</li>
+							<li>Нырнуть с моста в реку — есть</li>
+							<li>Выполнить норматив КМС по пауэрлифтингу — есть</li>
+							<li>Стать тренером — есть</li>
+							<li>Получить сертификат мастера НЛП — есть</li>
+							<li>Написать свой тренинг — есть x15</li>
+							<li>Выступить на радио — есть</li>
+							<li>Переехать жить в Киев — есть</li>
+							<li>Сделать своё реалити-шоу — есть два</li>
+							<li>Стать ведущим тренером в компании — есть</li>
+							<li>Провести тренинг за границей — есть, 7 стран, тренингов больше</li>
+							<li>Провести тренинг на английском языке — есть</li>
+							<li>Получить ВНЖ в Европе — получил</li>
+							<li>Переехать жить в Прагу — есть</li>
+							<li>Написать и выпустить книгу — 3 полноценные бумажные и несколько небольших электронных</li>
+							<li>Попасть в телевизор — много раз как эксперт на Первом, ТНТ, СТБ и даже один раз, как ведущий на 1+1</li>
+							<li>Открыть тренинговую компанию — есть</li>
+							<li>Провести мастер-класс на 1 000 человек — есть</li>
+							<li>Сделать компанию международной — есть</li>
+							<li>Провести тренинги в 20 городах — есть</li>
+							<li>Я фанат достижения целей и тренер. Моя профессия — сделать так, чтобы у тебя получилось.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</div>
+<footer class="footer">
+	<div class="container">
+		<div class="footer__social">
+			<div class="social">
+        		<div class="social-list">
+        			<div class="social-list__item">
+        				<a href="http://vk.com/" class="social-link social-link--vk" target="blank" title="">VK</a>
+        			</div>
+        			<div class="social-list__item">
+        				<a href="https://www.facebook.com/" class="social-link social-link--fb" target="blank" title="">FB</a>
+        			</div>
+        			<div class="social-list__item">
+        				<a href="http://instagram.com/" class="social-link social-link--in" target="blank" title="">IN</a>
+        			</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer__copy">
+			ИП Воробьёв.. все права защищены. 2016
+		</div>
+		<div class="footer__dev">
+			Разработка сайта:
+			<a href="http://parapix.ru" title="PARAPIX web & creative agency" class="parapix" target="blank">Parapix</a>
+		</div>
+	</div>
+</footer>
 
-<section class="results">
-  <div class="container">
-    <h1 class="results__title">
-      <span>100%</span>
-      учеников, которые работали,
-      <br/>добиваются результатов
-    </h1>
-    <table class="results__table">
-      <tr class="results__table-row">
-        <td class="results__name">Саша Кайсин</td>
-        <td class="results__result">
-          <span>организует парусные регаты, cреди клиентов Альфа-Банк и&nbsp;Порш</span>
-        </td>
-      </tr>
-      <tr class="results__table-row">
-        <td class="results__name">Надя Хохлова</td>
-        <td class="results__result">
-          <span>запустила собственный бренд модной одежды</span>
-        </td>
-      </tr>
-      <tr class="results__table-row">
-        <td class="results__name">Максим Мартьянов</td>
-        <td class="results__result">
-          <span>стал эксклюзивным представителем компании EBC Brakes в России</span>
-        </td>
-      </tr>
-      <tr class="results__table-row">
-        <td class="results__name">Константин Базоров</td>
-        <td class="results__result">
-          <span>открыл сеть магазинов спортивного оборудования в 4 городах</span>
-        </td>
-      </tr>
-      <tr class="results__table-row">
-        <td class="results__name">Дмитрий Гейман</td>
-        <td class="results__result">
-          <span>открыл сеть химчисток</span>
-        </td>
-      </tr>
-      <tr class="results__table-row">
-        <td class="results__name">Алексей Иванов</td>
-        <td class="results__result">
-          <span>открыл мастерскую дизайна интерьеров Geometrium</span>
-        </td>
-      </tr>
-      <tr class="results__table-row">
-        <td class="results__name">Алексей Черновой</td>
-        <td class="results__result">
-          <span>стал крутым фотографом, организует фестиваль SunArt</span>
-        </td>
-      </tr>
-      <tr class="results__table-row">
-        <td class="results__name">Александр Покровский</td>
-        <td class="results__result">
-          <span>открыл службу такси «Открытый город»</span>
-        </td>
-      </tr>
-      <tr class="results__table-row">
-        <td class="results__name">Алексей Девятериков</td>
-        <td class="results__result">
-          <span>открыл школу виндсёрфинга на Канарах</span>
-        </td>
-      </tr>
-      <tr class="results__table-row">
-        <td class="results__name">Максим Погребинский</td>
-        <td class="results__result">
-          <span>скинул 20 кг</span>
-        </td>
-      </tr>
-      <tr class="results__table-row">
-        <td class="results__name">Ирина Устьянцева</td>
-        <td class="results__result">
-          <span>дизайнер интерьеров, обучает людей в передаче «Квартирный вопрос» на НТВ</span>
-        </td>
-      </tr>
-    </table>
-  </div>
-</section>
 
-<section class="author">
-  <div class="author__text">
-    <div class="container">
-      <div class="row author__row">
-        <div class="col-xs-6">
-          <h1 class="author__title">Николай Воробьёв</h1>
-          <p class="author__subtitle">
-            тренирует 13&nbsp;лет, ведет программы на&nbsp;радио
-            <br/>и&nbsp;телевидении, пишет книги, достигает цели
-          </p>
 
-          <div class="author__coach">
-            <h2>Тренерский опыт</h2>
-            <p>Начал тренировать в&nbsp;2003&nbsp;году. Провёл тренинги в&nbsp;24&nbsp;городах России, Европы и&nbsp;Азии. Обучал сотрудников &laquo;Сбербанка&raquo;, &laquo;Яндекса&raquo;, &laquo;Альфа-Банка&raquo;.</p>
-            <p>С&nbsp;2006 по&nbsp;2010 ведущий тренер крупнейшей в&nbsp;мире компании, которая специализируется на&nbsp;знакомствах. С&nbsp;2010 тренер по&nbsp;достижению прорывных результатов, развитию личных качеств и&nbsp;созданию отношений. Автор 5&nbsp;книг, 15&nbsp;тренингов, обучил 15&nbsp;000&nbsp;человек.</p>
-          </div>
-          <div class="author__tv">
-            <h2>На&nbsp;телевидении</h2>
-            <p>2006&nbsp;&mdash; шоу &laquo;Правила съёма&raquo; на&nbsp;ТНТ&nbsp;&mdash; эксперт по&nbsp;соблазнению</p>
-            <p>2010&nbsp;&mdash; реалити-шоу &laquo;Pro Любoff&raquo; на&nbsp;1+1&nbsp;&mdash; тренер для женщин</p>
-            <p>2012&nbsp;&mdash; реалити-шоу &laquo;ПроРеальность&raquo;&nbsp;&mdash; автор и&nbsp;ведущий</p>
-            <p>2015&nbsp;&mdash; шоу &laquo;Парк&raquo; на&nbsp;&laquo;Первом&raquo;&nbsp;&mdash; передача про настоящих мужчин</p>
-          </div>
-          <div class="author__radio">
-            <h2>На&nbsp;радио</h2>
-            <p>Радио &laquo;Метро&raquo;&nbsp;&mdash; специальный выпуск про отношения</p>
-            <p>2011-2013&nbsp;&mdash; &laquo;Школа Соблазна&raquo; на&nbsp;&laquo;Подстер&raquo;&nbsp;&mdash; соавтор и&nbsp;ведущий</p>
-          </div>
-          <div class="author__books">
-            <h2>Книги</h2>
-            <p>Легкий способ бросить дрочить</p>
-            <p>Реальная любовь</p>
-            <p>Как стать богатым и&nbsp;успешным, оставаясь тупым и&nbsp;ленивым</p>
-            <p>Быстрое поднятие самооценки</p>
-            <p>Как встать с&nbsp;дивана и&nbsp;начать добиваться желаемого</p>
-          </div>
-          <div class="author__goals">
-            <h2>30&nbsp;личных достижений</h2>
-            <p>Поехать учиться в&nbsp;Германию&nbsp;&mdash; учился год</p>
-            <p>Получить сертификат MCSE&nbsp;&mdash; получил, и&nbsp;ещё 15&nbsp;разных сертификатов по&nbsp;IT</p>
-            <p>Пройти курс обучения парашютному спорту AFF&nbsp;&mdash; прошёл половину</p>
-            <p>Выучить английский, немецкий и&nbsp;испанский&nbsp;&mdash; английский на&nbsp;отлично, немецкий и&nbsp;испанский&nbsp;&mdash; могу лучше</p>
-            <p>Научиться продавать&nbsp;&mdash; создал отдел продаж из&nbsp;6&nbsp;человек и&nbsp;их&nbsp;научил</p>
-            <p>Построить собственный бизнес в&nbsp;сфере IT&nbsp;&mdash; занял&nbsp;25% своего рынка&nbsp;&mdash; 300 корпоративных клиентов</p>
-            <p>Открыть филиал в&nbsp;Москве&nbsp;&mdash; есть</p>
-            <p>Переехать жить в&nbsp;Москву&nbsp;&mdash; есть</p>
-            <p>Купить квартиру в&nbsp;центре&nbsp;&mdash; есть</p>
-            <p>Купить спортивную машину&nbsp;&mdash; есть</p>
-            <p>Построить отношения с&nbsp;чудесной девушкой&nbsp;&mdash; есть</p>
-            <p>Похудеть на&nbsp;20&nbsp;килограмм&nbsp;&mdash; есть на&nbsp;21</p>
-            <p>Нырнуть с&nbsp;моста в&nbsp;реку&nbsp;&mdash; есть</p>
-            <p>Выполнить норматив КМС по&nbsp;пауэрлифтингу&nbsp;&mdash; есть</p>
-            <p>Стать тренером&nbsp;&mdash; есть</p>
-            <p>Получить сертификат мастера НЛП&nbsp;&mdash; есть</p>
-            <p>Написать свой тренинг&nbsp;&mdash; есть x15</p>
-            <p>Выступить на&nbsp;радио&nbsp;&mdash; есть</p>
-            <p>Переехать жить в&nbsp;Киев&nbsp;&mdash; есть</p>
-            <p>Сделать своё реалити-шоу&nbsp;&mdash; есть два</p>
-            <p>Стать ведущим тренером в&nbsp;компании&nbsp;&mdash; есть</p>
-            <p>Провести тренинг за&nbsp;границей&nbsp;&mdash; есть, 7&nbsp;стран, тренингов больше</p>
-            <p>Провести тренинг на&nbsp;английском языке&nbsp;&mdash; есть</p>
-            <p>Получить ВНЖ в&nbsp;Европе&nbsp;&mdash; получил</p>
-            <p>Переехать жить в&nbsp;Прагу&nbsp;&mdash; есть</p>
-            <p>Написать и&nbsp;выпустить книгу&nbsp;&mdash; 3&nbsp;полноценные бумажные и&nbsp;несколько небольших электронных</p>
-            <p>Попасть в&nbsp;телевизор&nbsp;&mdash; много раз как эксперт на&nbsp;Первом, ТНТ, СТБ и&nbsp;даже один раз, как ведущий на&nbsp;1+1</p>
-            <p>Открыть тренинговую компанию&nbsp;&mdash; есть</p>
-            <p>Провести мастер-класс на&nbsp;1&nbsp;000 человек&nbsp;&mdash; есть</p>
-            <p>Сделать компанию международной&nbsp;&mdash; есть</p>
-            <p>Провести тренинги в&nbsp;20&nbsp;городах&nbsp;&mdash; есть</p>
-            <p>Я&nbsp;фанат достижения целей и&nbsp;тренер. Моя профессия&nbsp;&mdash; сделать так, чтобы у&nbsp;тебя получилось.</p>
-          </div>
+<!--noindex-->
+<div class="modal modal--full" data-modal-id="modal">
+	<div class="modal-close" data-modal-action="close">Закрыть</div>
+   	<div class="form">
+   		<h3 class="title">Регистрируйся на первую бесплатную консультацию</h3>
+   		
+		<form method="post" action="http://love.prorealnost.com/order.php">
+			<ul class="form__wrap row">
+				<li class="form__item col-xs-4">
+		    		<input type="text" name="name" class="input input--outline" placeholder="Имя">
+		    	</li>
+		    	<li class="form__item col-xs-4">
+		    		<input type="text" name="phone" class="input input--outline" placeholder="Телефон">
+		    	</li>
+			    <li class="form__item col-xs-4">
+			    	<button class="btn btn-primary">
+				    	Зарегистрироваться
+				    </button>
+			    </li>
+			</ul>
+      <input type="hidden" name="trello-list-id" value="569f823006dc53595355c866" />
+      <input type="hidden" name="redirect" value="http://pobeditel.soedinennost.com/ok/" />
+      <input type="hidden" name="form" value="modal" />
+		</form>
+	</div>
+</div>
 
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="author__photo fixed">
-    <img src="/images/man.png"/>
-  </div>
-  <div class="author__photo-scroll-trigger"></div>
-</section>
+<div class="modal" data-modal-id="modal-success">
+	<div class="modal-close" data-modal-action="close">Закрыть</div>
+   	<div class="form">
+   		<div class="form__title">
+	    	<h3>Спасибо за заявку</h3>
+   		</div>
+	</div>
+</div>
 
-<script>
-  // init controller
-  var controller = new ScrollMagic.Controller();
-  // build scene
-  $(function () { // wait for document ready
-    var scene = new ScrollMagic.Scene({triggerElement: ".author__photo-scroll-trigger", triggerHook: "onEnter"})
-      .setPin(".author__photo")
-      //.addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
-      .addTo(controller);
-  });
-</script>
+<!--/noindex-->

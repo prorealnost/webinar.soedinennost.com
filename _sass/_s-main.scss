@@ -1,0 +1,18 @@
+
+.s-main {
+  background: #efefef url(../images/b_main.jpg) bottom right no-repeat;
+  background-size: 60%;
+  height: 100vh;
+  min-height: 640px;
+}
+
+.s-main__title {
+  line-height: 1;
+  margin: 0 0 1.19em;
+}
+
+.s-main__introtext {
+  font-size: 1.714em;
+  font-weight: 300;
+  line-height: 1.2;
+}

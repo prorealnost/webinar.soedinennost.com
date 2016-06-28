@@ -1,0 +1,24 @@
+.results__table {
+  margin-top: 50px;
+  width: 100%;
+
+  .results__name {      
+    width: 32%;
+    text-align: right;
+    padding: 6px 6px 7px 6px;
+  }
+
+  .results__result {
+    padding: 6px 6px 7px 42px;
+
+    &::before {
+      content:"";
+      display: block;
+      float: left;
+      margin: 8px -26px;
+      background: #C7C7C2;
+      width: 9px;
+      height: 1px;
+    }
+  }
+}

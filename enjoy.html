@@ -4,44 +4,48 @@ permalink: /enjoy/
 style: enjoy
 ---
 
-<section class="enjoy">
-  <div class="container">
-    <h1 class="enjoy__title">
-      Вебинар, который поможет тебе
-      <div class="hidden-xs hidden-sm"></div>
-      совершить прорыв в&nbsp;жизни
-    </h1>
-    <div class="enjoy__row row">
-      <div class="enjoy__left col-md-8">
-        <div class="flex-video widescreen">
-          <iframe id="webinar-iframe"
-            width="853" height="480"
-            src="https://www.youtube.com/embed/swHo_lAL86c?rel=0&showinfo=0&enablejsapi=1"
-            frameborder="0"
-            style="border: solid 4px #37474F"
-            allowfullscreen
-          ></iframe>
+<div class="root-layout">
+  <main class="main" role="main">
+    <section class="enjoy">
+      <div class="container">
+        <h1 class="enjoy__title">
+          Вебинар, который поможет тебе
+          <div class="hidden-xs hidden-sm"></div>
+          совершить прорыв в&nbsp;жизни
+        </h1>
+        <div class="enjoy__row row">
+          <div class="enjoy__left col-xs-8">
+            <div class="flex-video widescreen">
+              <iframe id="webinar-iframe"
+                width="853" height="480"
+                src="https://www.youtube.com/embed/swHo_lAL86c?rel=0&showinfo=0&enablejsapi=1"
+                frameborder="0"
+                style="border: solid 4px #37474F"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div class="enjoy__right col-xs-4">
+            <p class="enjoy__lead">Хочешь развиваться дальше?</p>
+            <div class="enjoy__offer">
+              <p>Добавляйся в группу, чтобы получить подарки:</p>
+              <ol>
+                <li>1. Книгу «17 шагов, чтобы привести жизнь в порядок»</li>
+                <li>2. Книгу «Технология лёгкого достижения целей»</li>
+                <li>3. Один из трёх обучающих комплектов на выбор</li>
+              </ol>
+            </div>
+            <a class="btn btn-warning btn-block enjoy__button" href="https://vk.com/podarki_webinar" target="_blank" onclick="yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-gift-click'); ga('send', 'event', 'button', 'click', 'gift'); return true;">ВСТУПИТЬ В&nbsp;ГРУППУ<br/>И&nbsp;ПОЛУЧИТЬ ПОДАРКИ</a>
+            <div class="enjoy__note">
+              <p>Кстати, у меня есть тренинг «Победитель», на котором я возьму тебя за руку и доведу до прорывных результатов.</p>
+              <p><a href="http://pobeditel.soedinennost.com/" target="_blank" onclick="yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-training-click'); ga('send', 'event', 'button', 'click', 'training'); return true;">Узнать про тренинг подробнее</a></p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="enjoy__right col-md-4">
-        <p class="enjoy__lead">Хочешь развиваться дальше?</p>
-        <div class="enjoy__offer">
-          <p>Добавляйся в группу, чтобы получить подарки:</p>
-          <ol>
-            <li>Книгу «17 шагов, чтобы привести жизнь в порядок»</li>
-            <li>Книгу «Технология лёгкого достижения целей»</li>
-            <li>Один из трёх обучающих комплектов на выбор</li>
-          </ol>
-        </div>
-        <a class="btn btn-warning btn-block enjoy__button" href="https://vk.com/podarki_webinar" target="_blank" onclick="yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-gift-click'); ga('send', 'event', 'button', 'click', 'gift'); return true;">ВСТУПИТЬ В&nbsp;ГРУППУ И&nbsp;ПОЛУЧИТЬ ПОДАРКИ</a>
-        <div class="enjoy__note">
-          <p>Кстати, у меня есть тренинг «Победитель», на котором я возьму тебя за руку и доведу до прорывных результатов.</p>
-          <p><a href="http://pobeditel.soedinennost.com/" target="_blank" onclick="yaCounter{{ site.yandex_metrika }}.reachGoal('webinar-training-click'); ga('send', 'event', 'button', 'click', 'training'); return true;">Узнать про тренинг подробнее</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
+  </main>
+</div>
 
 <script type="text/javascript">
   var tag = document.createElement('script');
